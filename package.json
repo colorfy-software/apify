@@ -1,0 +1,33 @@
+{
+  "name": "@colorfy-software/apify",
+  "version": "1.0.0",
+  "description": "This is a simple wrapper for fetch to write less code.",
+  "main": "./index",
+  "types": "./index.d.ts",
+  "scripts": {
+    "test": "tsc --noEmit"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colorfy-software/apify.git"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.5.5"
+  },
+  "author": "Kristjan Vool",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/colorfy-software/apify/issues"
+  },
+  "homepage": "https://github.com/colorfy-software/apify#readme",
+  "devDependencies": {
+    "@types/typescript": "^2.0.0"
+  },
+  "dependencies": {
+    "typescript": "^4.5.5"
+  }
+}
