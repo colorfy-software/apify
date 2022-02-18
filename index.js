@@ -43,7 +43,6 @@ class CreateRequest {
     this.options = options
   }
 }
-
 const APIConstructor = (reqs, options) => {
   return (key, ...params) => {
     const request = reqs[key]
@@ -75,5 +74,4 @@ const APIConstructor = (reqs, options) => {
     })
   }
 }
-
 export { APIConstructor, CreateRequest }

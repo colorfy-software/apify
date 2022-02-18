@@ -6,7 +6,7 @@ declare module '@colorfy-software/apify' {
   }
   interface onErrorPramType<T> {
     requestName: keyof T
-    message: Error
+    error: Error
   }
   export interface CreateRequestType<K, V> {
     params: K
