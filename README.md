@@ -1,6 +1,8 @@
 # @colorfy-software/apify
 
-This is a simple wrapper for fetch to write less code.
+> This is a simple wrapper for fetch to write less code and have stuff typed
+
+[![NPM](https://img.shields.io/npm/v/@colorfy-software/apify.svg)](https://www.npmjs.com/package/@colorfy-software/apify) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 # Installation
 
@@ -15,29 +17,29 @@ This is a simple wrapper for fetch to write less code.
 
 import { CreateRequest, CreateRequestType } from '@colorfy-software/apify'
 
-// Define request param types if needed
-// interface GetTodoReqType {
-//   userId: number
-//   id: number
-// }
-
-// Define the types
-interface GetTodoResType {
-  userId: number
-  id: number
+// Define request type
+interface CreatePostReqType {
   title: string
-  completed: boolean
+  body: string
+  userId: number
 }
 
-// You can mix and match these depending on what your API endpoint does
-type GetTodo = CreateRequestType<undefined, GetTodoResType>
-// type GetTodo = CreateRequestType<GetTodoReqType, GetTodoResType>
+// Define response type
+interface CreatePostResType {
+  id: number
+  title: string
+  body: string
+  userId: number
+}
+
+// Combine types
+type CretePostType = CreateRequestType<CreatePostReqType, CreatePostResType>
 
 // Create request
-const getTodo = new CreateRequest<GetTodo>('/todos/1')
+const createPost = new CreateRequest<CretePostType>('/posts')
 
 // Export all requests
-export default { getTodo }
+export default { createPost }
 ```
 
 ## Creating api interface
@@ -76,7 +78,11 @@ export default api
 import api from '../api'
 
 // ready to be used and is all typed
-api('getTodo').then((res) => {
-  console.log({ res })
+api('getTodo', {
+  userId: 1,
+  body: 'This be a post',
+  title: 'This be the title of the post',
+}).then((res) => {
+  const { body, userId, title, id } = res
 })
 ```
