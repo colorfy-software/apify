@@ -78,7 +78,7 @@ export default api
 import api from '../api'
 
 // ready to be used and is all typed
-api('getTodo', {
+api('createPost', {
   userId: 1,
   body: 'This be a post',
   title: 'This be the title of the post',
