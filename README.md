@@ -33,10 +33,10 @@ interface CreatePostResType {
 }
 
 // Combine types
-type CretePostType = CreateRequestType<CreatePostReqType, CreatePostResType>
+type CreatePostType = CreateRequestType<CreatePostReqType, CreatePostResType>
 
 // Create request
-const createPost = new CreateRequest<CretePostType>('/posts')
+const createPost = new CreateRequest<CreatePostType>('/posts')
 
 // Export all requests
 export default { createPost }
