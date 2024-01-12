@@ -33,10 +33,10 @@ interface CreatePostResType {
 }
 
 // Combine types
-type CretePostType = CreateRequestType<CreatePostReqType, CreatePostResType>
+type CreatePostType = CreateRequestType<CreatePostReqType, CreatePostResType>
 
 // Create request
-const createPost = new CreateRequest<CretePostType>('/posts')
+const createPost = new CreateRequest<CreatePostType>('/posts')
 
 // Export all requests
 export default { createPost }
@@ -78,7 +78,7 @@ export default api
 import api from '../api'
 
 // ready to be used and is all typed
-api('getTodo', {
+api('createPost', {
   userId: 1,
   body: 'This be a post',
   title: 'This be the title of the post',
